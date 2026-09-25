@@ -20,7 +20,8 @@ export function RabbitLanyard({
  position?:[number,number,number];
  initialAngle?:number;
 }){
- const front=useTexture(ART+frontFile),back=useTexture(ART+backFile);
+ const textureFile=(file:string)=>ART+'tex/'+file.replace(/\.png$/i,'.webp');
+ const front=useTexture(textureFile(frontFile)),back=useTexture(textureFile(backFile));
  const pendulum=useRef<Group>(null),card=useRef<Group>(null);
  const restAngle=0;
  const angle=useRef(initialAngle),velocity=useRef(-initialAngle),dragging=useRef(false),moved=useRef(false),dragStart=useRef({x:0,angle:0});
