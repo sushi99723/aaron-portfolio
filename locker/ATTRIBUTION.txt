@@ -1,0 +1,4 @@
+Cabinet geometry adapted from qzz0518/locker-folio (MIT, see LICENSE).
+Original locker design concept credited by upstream to momo.
+Folder opening/fan interaction adapted from DavidHDev/react-bits Folder (see REACT-BITS-LICENSE), rebuilt as 3D geometry so extraction and opening use one object.
+All displayed image assets supplied by the portfolio owner. No upstream decorative artwork used.
