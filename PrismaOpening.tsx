@@ -1,9 +1,11 @@
 import {SofaHero} from './SofaHero';
 import {DepthName} from './DepthName';
 import {ProfileTicket} from './ProfileTicket';
+import {useEffect,useRef,useState} from 'react';
 import {motion,useReducedMotion} from 'framer-motion';
 import {ArrowUpRight,Check,Clapperboard,Layers,Sparkles} from 'lucide-react';
 const detailVideo='https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260406_133058_0504132a-0cf3-4450-a370-8ea3b05c95d4.mp4';
+function LazyVideo({src}:{src:string}){const root=useRef<HTMLDivElement>(null),[visible,setVisible]=useState(false);useEffect(()=>{const node=root.current;if(!node)return;const observer=new IntersectionObserver(([entry])=>{if(entry.isIntersecting){setVisible(true);observer.disconnect()}},{rootMargin:'300px'});observer.observe(node);return()=>observer.disconnect()},[]);return <div ref={root} className="prisma-lazy-video">{visible&&<video src={src} autoPlay loop muted playsInline preload="metadata" aria-hidden="true"/>}</div>}
 export function PrismaOpening(){
  const reduce=useReducedMotion();
  const reveal={initial:reduce?false:{opacity:0,y:20},whileInView:{opacity:1,y:0},viewport:{once:true},transition:{duration:.8}} as const;
@@ -19,7 +21,7 @@ export function PrismaOpening(){
  <article><p className="profile-date">2026.08 — 至今</p><h3><span>伯克兔</span>个人 IP <small>AI 动漫 · 情感表达</small></h3><p>独立完成内容规划、AI 动漫视频制作与账号发布，以可复用的创作流程探索情感内容表达。</p><p className="profile-result">半个月抖音 5 万粉丝 · 运营首周百万级爆款 · 小红书首篇万赞</p></article>
  <article><p className="profile-date">2025.03 — 至今</p><h3><span>思维狮</span>个人 IP <small>个人成长 · 内容运营</small></h3><p>从账号定位、选题文案到视觉制作、发布与商业化，独立搭建个人成长内容 IP，并用 AI 工作流支持全流程生产。</p><p className="profile-result">抖音累计 30 万粉丝 · 单人 3 小时内完成全流程</p></article>
  </div></div></motion.div></section>
- <section id="services" className="prisma-services"><motion.h2 {...reveal}>有想法，也有实现它的方法。<br/><span>从第一笔灵感，到被看见的作品。</span></motion.h2><div className="prisma-features"><motion.a {...reveal} href="#home" className="prisma-film">{!reduce&&<video src={detailVideo} autoPlay loop muted playsInline aria-hidden="true"/>}<span>让创作发生。<ArrowUpRight/></span></motion.a>{[
+ <section id="services" className="prisma-services"><motion.h2 {...reveal}>有想法，也有实现它的方法。<br/><span>从第一笔灵感，到被看见的作品。</span></motion.h2><div className="prisma-features"><motion.a {...reveal} href="#home" className="prisma-film">{!reduce&&<LazyVideo src={detailVideo}/>}<span>让创作发生。<ArrowUpRight/></span></motion.a>{[
  {title:'内容与叙事',icon:Clapperboard,items:['账号定位与内容选题','直播内容策划','文案、脚本与镜头规划']},
  {title:'视觉与 IP',icon:Layers,items:['品牌与 IP 视觉表达','视频与周边物料设计','社群与账号运营']},
  {title:'AI 创作系统',icon:Sparkles,items:['AI 图像与动漫内容制作','Coze 与 Codex 工作流','从制作、发布到复盘']}
