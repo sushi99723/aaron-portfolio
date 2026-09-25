@@ -9,24 +9,22 @@ export function RabbitLanyard({
  hidden=false,
  onInspect,
  frontFile='rabbit-lanyard-front.png',
- backFile='rabbit-lanyard-back.png',
  position=[-.31,1.19,.026],
  initialAngle=.12
 }:{
  hidden?:boolean;
  onInspect?:(group:Group)=>void;
  frontFile?:string;
- backFile?:string;
  position?:[number,number,number];
  initialAngle?:number;
 }){
  const textureFile=(file:string)=>ART+'tex/'+file.replace(/\.png$/i,'.webp');
- const front=useTexture(textureFile(frontFile)),back=useTexture(textureFile(backFile));
+ const front=useTexture(textureFile(frontFile));
  const pendulum=useRef<Group>(null),card=useRef<Group>(null);
  const restAngle=0;
  const angle=useRef(initialAngle),velocity=useRef(-initialAngle),dragging=useRef(false),moved=useRef(false),dragStart=useRef({x:0,angle:0});
  const hovered=useRef(false);
- useEffect(()=>{front.colorSpace=SRGBColorSpace;back.colorSpace=SRGBColorSpace;back.repeat.set(1,.918);back.offset.set(0,.02);front.needsUpdate=true;back.needsUpdate=true},[front,back]);
+ useEffect(()=>{front.colorSpace=SRGBColorSpace;front.needsUpdate=true},[front]);
  useEffect(()=>()=>{document.body.style.cursor='auto'},[]);
  useFrame((state,delta)=>{
   const dt=Math.min(delta,.035);
@@ -54,7 +52,7 @@ export function RabbitLanyard({
    <group ref={card} position={[0,-.64,.02]} onClick={e=>{e.stopPropagation();if(!moved.current&&card.current)onInspect?.(card.current)}} onPointerDown={down} onPointerMove={move} onPointerUp={up} onPointerCancel={up} onPointerOver={e=>{e.stopPropagation();hovered.current=true;document.body.style.cursor='grab'}} onPointerOut={()=>{hovered.current=false;if(!dragging.current)document.body.style.cursor='auto'}}>
     <RoundedBox args={[.29,.46,.024]} radius={.027} smoothness={5} castShadow receiveShadow><meshPhysicalMaterial color="#211532" metalness={.58} roughness={.28} clearcoat={1} clearcoatRoughness={.12}/></RoundedBox>
     <mesh position={[0,0,.014]}><planeGeometry args={[.284,.452]}/><meshPhysicalMaterial map={front} transparent alphaTest={.02} side={DoubleSide} roughness={.42} metalness={.16} clearcoat={.82}/></mesh>
-    <mesh position={[0,0,-.014]} rotation={[0,Math.PI,0]}><planeGeometry args={[.284,.452]}/><meshPhysicalMaterial map={back} transparent alphaTest={.02} side={DoubleSide} roughness={.42} metalness={.16} clearcoat={.82}/></mesh>
+    <mesh position={[0,0,-.014]} rotation={[0,Math.PI,0]}><planeGeometry args={[.284,.452]}/><meshPhysicalMaterial color="#171020" side={DoubleSide} roughness={.38} metalness={.28} clearcoat={.72}/></mesh>
    </group>
   </group>
  </group>

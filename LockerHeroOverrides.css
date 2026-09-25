@@ -731,6 +731,7 @@
 @media(max-height:760px) and (min-width:1121px){.lion-commercial>header>small{display:none}.lion-commercial-flow{margin-top:8px}.lion-commercial-flow>section{min-height:72px;padding:9px 12px}.lion-commercial-board{margin-top:8px}.lion-commercial-board>section{padding:13px}.lion-commercial-board small{margin-top:10px}.lion-commercial-board p{font-size:clamp(9px,.54vw,12px)!important;line-height:1.45!important}.lion-commercial-proof{margin-top:7px;padding:9px 11px}.lion-commercial>footer{display:none}}
 
 @media(max-width:720px){
+ .locker-modal,.locker-focus{position:fixed;inset:0;width:100vw;height:100svh;background:rgba(8,6,16,.9)!important}
  .folder-a4.folder-a4-focused.is-rabbit-detail:has(.rabbit-growth),
  .folder-a4.folder-a4-focused.is-lion-detail{width:82vw;height:74svh;max-height:74svh;padding:16px;overflow:auto}
  .rabbit-growth.is-detailed,.lion-impact.is-detailed,.lion-system.is-detailed,.lion-product.is-detailed,.lion-commercial.is-detailed{min-height:0}
@@ -742,9 +743,16 @@
 
 /* Phone framing: keep the folder, paper and detail views fully inside the viewport. */
 @media(max-width:720px){
- .locker-modal{padding:10svh 8vw}
- .folder-browser{width:84vw;height:72svh;max-width:520px;transform:none;scale:1}
- .folder-choice{transform:scale(.72);transform-origin:center}
+ .locker-modal{padding:7svh 4vw}
+ .folder-browser{width:92vw;height:82svh;max-width:520px;transform:none;scale:1}
+ .folder-choice{width:92vw;height:250px}
+ .folder-choice>.flat-folder{transform:scale(.72)}
+ .folder-choice>.flat-folder:hover{transform:translateY(-5px) scale(.74)}
+ .folder-choice.is-active{margin-top:230px}
+ .folder-a4-stack{top:-300px}
+ .folder-a4:not(.folder-a4-focused){left:-85px;width:170px;height:240px;padding:16px 14px;overflow:hidden}
+ .folder-a4:not(.folder-a4-focused) header b,.folder-a4:not(.folder-a4-focused)>div>header>b{font-size:16px!important}
+ .folder-a4:not(.folder-a4-focused) header small,.folder-a4:not(.folder-a4-focused) footer,.folder-a4:not(.folder-a4-focused) p{font-size:7px!important}
  .folder-page-focus-shell{inset:0;overflow:hidden}
  .folder-a4.folder-a4-focused,
  .folder-a4.folder-a4-focused.is-anko-detail,
@@ -753,11 +761,27 @@
  .folder-a4.folder-a4-focused.is-anko-detail:has(.a4-capability),
  .folder-a4.folder-a4-focused.is-rabbit-detail:has(.rabbit-building),
  .folder-a4.folder-a4-focused.is-rabbit-detail:has(.rabbit-engine),
- .folder-a4.folder-a4-focused.is-rabbit-detail:has(.rabbit-growth){width:78vw;height:68svh;max-width:620px;max-height:680px;padding:16px;border-radius:18px;overflow:auto;overscroll-behavior:contain;touch-action:pan-y}
- .role-depth-carousel{width:86vw;height:72svh;max-width:680px;max-height:720px}
- .role-depth-card .role-paper{width:76vw;height:66svh;max-width:600px;max-height:660px;padding:18px;border-radius:18px;overflow:auto;overscroll-behavior:contain;touch-action:pan-y}
- .role-depth-tint{width:76vw;height:66svh;max-width:600px;max-height:660px}
- .role-back{right:6vw;top:3svh;padding:8px 12px}
+ .folder-a4.folder-a4-focused.is-rabbit-detail:has(.rabbit-growth){width:86vw;height:78svh;max-width:620px;max-height:760px;padding:17px;border-radius:18px;overflow:auto;overscroll-behavior:contain;touch-action:pan-y}
+ .role-depth-carousel{width:92vw;height:84svh;max-width:680px;max-height:800px}
+ .role-depth-card .role-paper{width:84vw;height:76svh;max-width:600px;max-height:740px;padding:18px;border-radius:18px;overflow:auto;overscroll-behavior:contain;touch-action:pan-y}
+ .role-depth-tint{width:84vw;height:76svh;max-width:600px;max-height:740px}
+ .role-back{right:4vw;top:1.5svh;padding:8px 12px}
+ .role-paper>header{position:sticky;z-index:10;top:-18px;background:#f8f6fa}
+ .role-depth-card .role-paper header b{font-size:22px}
+ .role-depth-card .role-paper h3{font-size:20px}
+ .role-depth-card .role-paper p{font-size:12px;line-height:1.65}
+ .role-sticker-prev,.role-sticker-next{width:86px;min-height:50px;padding:8px 10px}
+ .role-sticker-prev{left:0;bottom:0}.role-sticker-next{right:0;top:0}
+ .planning-board,.role-visual .visual-sections,.community-board,.delivery-board,
+ .rabbit-impact-board,.rabbit-building-board,.rabbit-engine-board,.rabbit-growth-board,
+ .lion-impact-board,.lion-system-board,.lion-product-board,.lion-commercial-board{display:flex!important;height:auto!important;min-height:0!important;flex-direction:column!important}
+ .folder-a4-focused figure,.role-paper figure{height:auto!important;min-height:150px!important;max-height:none!important}
+ .folder-a4-focused figure img,.role-paper figure img{height:auto!important;max-height:420px;object-fit:contain!important}
+ .rabbit-character-panel>figure,.rabbit-expression-panel>figure,.rabbit-engine-map>figure,.lion-product-board figure,.lion-account>figure,.lion-schema-visual{min-height:180px!important}
+ .delivery-photo-grid,.delivery-song-grid{height:auto!important;min-height:220px;grid-template-columns:1fr 1fr}
+ .visual-cover-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .lion-commercial-board>section{min-height:0}
+ .modal-tip{display:none}
  .locker-focus-item.is-badge,.locker-focus-item.is-portrait{width:min(72vw,360px);height:min(66svh,560px)}
  .locker-focus-item.is-postcard{width:min(80vw,520px);height:min(64svh,460px)}
 }
