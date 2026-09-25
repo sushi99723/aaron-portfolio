@@ -7,17 +7,17 @@ export const assets = {
     "https://shrug-person-78902957.figma.site/_components/v2/ebb2b8f25d8e24d5f0a5ca8af4c950de81aa2fd7/Group_134-1.2e04f3ce.png"
   ],
   "marquee": [
-    "art/anko-stage.png",
-    "art/siweishi-knowledge.png",
-    "art/boketu-animation.png",
-    "art/anko-stage.png",
-    "art/siweishi-knowledge.png",
-    "art/boketu-animation.png"
+    "art/anko-stage.webp",
+    "art/siweishi-knowledge.webp",
+    "art/boketu-animation.webp",
+    "art/anko-stage.webp",
+    "art/siweishi-knowledge.webp",
+    "art/boketu-animation.webp"
   ],
   "projects": [
-    "art/anko-stage.png",
-    "art/siweishi-knowledge.png",
-    "art/boketu-animation.png"
+    "art/anko-stage.webp",
+    "art/siweishi-knowledge.webp",
+    "art/boketu-animation.webp"
   ]
 };
 

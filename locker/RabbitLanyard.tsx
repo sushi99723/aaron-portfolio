@@ -8,7 +8,7 @@ const ART='art/locker/';
 export function RabbitLanyard({
  hidden=false,
  onInspect,
- frontFile='rabbit-lanyard-front.png',
+ frontFile='rabbit-lanyard-front.webp',
  position=[-.31,1.19,.026],
  initialAngle=.12
 }:{
@@ -18,7 +18,7 @@ export function RabbitLanyard({
  position?:[number,number,number];
  initialAngle?:number;
 }){
- const textureFile=(file:string)=>ART+'tex/'+file.replace(/\.png$/i,'.webp');
+ const textureFile=(file:string)=>ART+'tex/'+file.replace(/\.webp$/i,'.webp');
  const front=useTexture(textureFile(frontFile));
  const pendulum=useRef<Group>(null),card=useRef<Group>(null);
  const restAngle=0;

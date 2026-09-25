@@ -2,7 +2,7 @@ import {useEffect,useMemo,useRef,useState} from 'react';
 import {useFrame} from '@react-three/fiber';
 import {useTexture} from '@react-three/drei';
 import {Mesh,DoubleSide,MathUtils,SRGBColorSpace} from 'three';
-const STICKERS=['sticker-one.png','sticker-two.png',...Array.from({length:9},(_,i)=>`sticker-${i+3}.png`),...Array.from({length:6},(_,i)=>`sticker-${i+13}.png`)];
+const STICKERS=['sticker-one.webp','sticker-two.webp',...Array.from({length:9},(_,i)=>`sticker-${i+3}.webp`),...Array.from({length:6},(_,i)=>`sticker-${i+13}.webp`)];
 // Curved paper lifts from the upper edge; release settles it back onto the door.
 export function PeelSticker({file,width,height}:{file:string;width:number;height:number}){
  const mesh=useRef<Mesh>(null),amount=useRef(0),drag=useRef<number|null>(null);const [hover,setHover]=useState(false);const [pull,setPull]=useState(0);const atlas=useTexture('art/locker/tex/sticker-atlas.webp');const texture=useMemo(()=>{const index=Math.max(0,STICKERS.indexOf(file)),copy=atlas.clone();copy.colorSpace=SRGBColorSpace;copy.repeat.set(.25,.2);copy.offset.set(index%4*.25,1-(Math.floor(index/4)+1)*.2);copy.needsUpdate=true;return copy},[atlas,file]);useEffect(()=>()=>texture.dispose(),[texture]);

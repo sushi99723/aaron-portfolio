@@ -25,7 +25,7 @@ export function ProfileTicket(){
    <div ref={frame} className="profile-frame-layer"><div className="profile-ticket-spine">AARON <small>CONTENT · VISUAL · AI</small></div><span className="profile-ticket-note">从 IDEA 到真实成果。</span><span className="profile-foil"/></div>
   </div>
   <div className="profile-photo-hit" onPointerMove={e=>move(e,'photo')} onPointerLeave={()=>reset(photo.current)}>
-   <div ref={photo} className="profile-photo"><img src="art/aaron-profile-photo.png" alt="Aaron 的耳机角色肖像" draggable={false}/><div className="profile-photo-caption">CREATIVE PROFILE <span>2026</span></div><span className="profile-foil"/></div>
+   <div ref={photo} className="profile-photo"><img src="art/aaron-profile-photo.webp" alt="Aaron 的耳机角色肖像" draggable={false}/><div className="profile-photo-caption">CREATIVE PROFILE <span>2026</span></div><span className="profile-foil"/></div>
   </div>
  </figure>;
 }
