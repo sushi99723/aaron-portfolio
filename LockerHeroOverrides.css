@@ -785,3 +785,53 @@
  .locker-focus-item.is-badge,.locker-focus-item.is-portrait{width:min(72vw,360px);height:min(66svh,560px)}
  .locker-focus-item.is-postcard{width:min(80vw,520px);height:min(64svh,460px)}
 }
+
+/* Phone-only layout: reserve a control rail below the paper and let content flow vertically. */
+@media(max-width:720px){
+ .sofa-hero:has(.locker-stage.is-inspecting){z-index:1000}
+ .locker-modal{box-sizing:border-box;padding:max(10px,env(safe-area-inset-top)) 10px max(10px,env(safe-area-inset-bottom))}
+ .folder-browser{width:100%;height:100%;max-width:none;max-height:none}
+ .folder-page-focus-shell{position:fixed;inset:0;padding:max(10px,env(safe-area-inset-top)) 10px max(10px,env(safe-area-inset-bottom));box-sizing:border-box}
+ .folder-a4:not(.folder-a4-focused){box-sizing:border-box;width:160px;height:224px;padding:13px 11px}
+ .folder-a4:not(.folder-a4-focused) .a4-role-summary>b{font-size:22px;line-height:1.05}
+ .folder-a4:not(.folder-a4-focused) .a4-role-summary>small{margin-top:7px;padding-bottom:10px;line-height:1.3}
+ .folder-a4:not(.folder-a4-focused) .a4-role-summary>div{gap:5px;margin-top:10px}
+ .folder-a4:not(.folder-a4-focused) .a4-role-summary>div i{padding:7px 5px;font-size:8px}
+
+ .role-detail{position:fixed;inset:0;display:block;padding:max(10px,env(safe-area-inset-top)) 10px calc(82px + env(safe-area-inset-bottom));box-sizing:border-box;overflow:hidden}
+ .role-depth-carousel{width:100%;height:100%;max-width:none;max-height:none;overflow:hidden}
+ .role-depth-stage{inset:0}
+ .role-depth-card{align-items:stretch}
+ .role-depth-card .role-paper{box-sizing:border-box;width:100%;height:100%;max-width:none;max-height:none;padding:16px;border-radius:16px;overflow-x:hidden;overflow-y:auto;overscroll-behavior:contain;touch-action:pan-y}
+ .role-depth-tint{width:100%;height:100%;max-width:none;max-height:none}
+ .role-paper>header{position:static;top:auto;background:transparent}
+ .role-depth-card .role-paper header{padding-bottom:12px}
+ .role-depth-card .role-paper header>span{width:34px;height:34px;font-size:11px}
+ .role-depth-card .role-paper header b{font-size:20px}
+ .role-depth-card .role-paper header small{font-size:8px}
+
+ .role-back{left:50%;right:auto;top:auto;bottom:max(10px,env(safe-area-inset-bottom));min-width:112px;padding:11px 16px;transform:translateX(-50%);text-align:center}
+ .role-sticker-prev,.role-sticker-next{top:auto;bottom:max(8px,env(safe-area-inset-bottom));width:82px;min-height:44px;padding:7px 9px;clip-path:none;border-width:1px;border-radius:13px;transform:none}
+ .role-sticker-prev{left:10px}.role-sticker-next{right:10px}
+ .role-sticker-prev:hover,.role-sticker-next:hover{transform:none}
+ .role-sticker-prev small,.role-sticker-next small{font-size:7px}
+ .role-sticker-prev b,.role-sticker-next b{max-width:54px;overflow:hidden;font-size:11px;text-overflow:ellipsis}
+ .role-sticker-prev span,.role-sticker-next span{font-size:20px}
+ .role-depth-dots{bottom:calc(55px + env(safe-area-inset-bottom));padding:6px 9px}
+
+ .planning-intro,.community-intro,.delivery-intro{display:block;padding:12px 0}
+ .planning-board,.community-board,.delivery-board{overflow:visible}
+ .planning-rundown,.community-channel-panel,.delivery-bw,.delivery-music{padding:12px;border-radius:13px}
+ .planning-output,.community-loop{display:none}
+ .community-channel-main{display:block;margin-top:10px}
+ .community-panel-copy{margin-top:10px}
+ .community-channel-tags{grid-template-columns:1fr 1fr}
+ .delivery-photo-grid,.delivery-song-grid{min-height:0!important;grid-template-columns:1fr!important}
+ .delivery-photo-grid figure,.delivery-song-grid figure{min-height:150px!important}
+ .visual-cover-grid{grid-template-columns:1fr 1fr}
+
+ .a4-capability.is-detailed .capability-grid{display:flex;flex:0 0 auto;flex-direction:column;grid-template-columns:none;grid-template-rows:none}
+ .capability-review{flex-direction:column;align-items:flex-start}
+ .folder-a4-focused.is-anko-detail .a4-impact.is-detailed{display:flex;overflow:visible}
+ .folder-a4-focused.is-anko-detail .a4-impact-proof{min-height:180px}
+}
