@@ -835,3 +835,113 @@
  .folder-a4-focused.is-anko-detail .a4-impact.is-detailed{display:flex;overflow:visible}
  .folder-a4-focused.is-anko-detail .a4-impact-proof{min-height:180px}
 }
+
+/* Final phone polish.  Keep the desktop composition untouched. */
+@media(max-width:720px){
+ /* Folder previews: give every project the same calm, readable fan. */
+ .folder-a4-stack{top:-284px}
+ .folder-a4:not(.folder-a4-focused){left:-75px;width:150px;height:218px;padding:13px 12px}
+ .folder-a4-stack:has(.folder-a4:nth-child(4)) .folder-a4:not(.folder-a4-focused){left:-70px;width:140px;height:216px;padding:12px 10px}
+ .folder-a4:not(.folder-a4-focused)>div{height:100%;min-height:0;overflow:hidden}
+ .folder-a4:not(.folder-a4-focused)>div>header{gap:0!important;padding-bottom:9px!important}
+ .folder-a4:not(.folder-a4-focused)>div>header>span,
+ .folder-a4:not(.folder-a4-focused) .a4-role-summary>span{display:block!important;margin:0 0 8px!important;color:#c94848!important;font:850 7px/1.1 system-ui!important;letter-spacing:.045em!important;white-space:nowrap!important}
+ .folder-a4:not(.folder-a4-focused)>div>header>b,
+ .folder-a4:not(.folder-a4-focused) .a4-role-summary>b{margin:0!important;font:900 15px/1.12 "Microsoft YaHei",sans-serif!important;letter-spacing:0!important}
+ .folder-a4:not(.folder-a4-focused)>div>header>small,
+ .folder-a4:not(.folder-a4-focused) .a4-role-summary>small{margin-top:6px!important;color:#7d7280!important;font:650 6.5px/1.35 "Microsoft YaHei",sans-serif!important;letter-spacing:0!important}
+ .folder-a4:not(.folder-a4-focused) .a4-role-summary>b{font-size:19px!important}
+ .folder-a4:not(.folder-a4-focused) .a4-role-summary>div{gap:4px!important;margin-top:8px!important}
+ .folder-a4:not(.folder-a4-focused) .a4-role-summary>div i{padding:6px 4px!important;font-size:7px!important;line-height:1.2!important}
+ .folder-a4:not(.folder-a4-focused) :is(.lion-impact-metrics,.lion-product-summary,.rabbit-impact-metrics){gap:5px!important;margin-top:9px!important}
+ .folder-a4:not(.folder-a4-focused) :is(.lion-impact-metrics,.lion-product-summary,.rabbit-impact-metrics)>strong{min-height:42px!important;padding:6px!important}
+ .folder-a4:not(.folder-a4-focused) :is(.lion-impact-metrics,.lion-product-summary,.rabbit-impact-metrics) em{font-size:10px!important;line-height:1.08!important}
+ .folder-a4:not(.folder-a4-focused) :is(.lion-impact-metrics,.lion-product-summary,.rabbit-impact-metrics) small{font-size:5.5px!important;line-height:1.2!important}
+
+ /* Every detail paper scrolls inside itself; the site behind it stays still. */
+ .folder-a4.folder-a4-focused,
+ .folder-a4.folder-a4-focused.is-anko-detail,
+ .folder-a4.folder-a4-focused.is-rabbit-detail,
+ .folder-a4.folder-a4-focused.is-lion-detail{overflow-x:hidden!important;overflow-y:auto!important;overscroll-behavior:contain!important;touch-action:pan-y!important;-webkit-overflow-scrolling:touch}
+ .role-depth-card .role-paper{padding-bottom:28px;scroll-padding:16px 0 92px}
+ .role-depth-card .role-paper>*{max-width:100%}
+
+ /* Anko / visual design: do not crop the last cover row and restore materials. */
+ .role-visual .visual-sections{display:flex!important;flex-direction:column!important;gap:14px!important;padding-top:12px!important;overflow:visible!important}
+ .visual-cover-part,.visual-merch-part{display:flex!important;width:100%!important;min-height:0!important;flex:none!important;box-sizing:border-box;padding:12px!important}
+ .visual-cover-body{display:flex!important;min-height:0!important;flex-direction:column!important;gap:10px!important}
+ .visual-cover-grid{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;grid-template-rows:none!important;gap:7px!important;overflow:visible!important}
+ .role-paper .visual-cover-grid figure{min-height:0!important;aspect-ratio:4/3!important;border-radius:8px}
+ .role-paper .visual-cover-grid figure img{width:100%!important;height:100%!important;max-height:none!important;object-fit:cover!important}
+ .visual-cover-types{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;grid-template-rows:none!important;gap:7px!important}
+ .visual-cover-types span{min-height:58px!important;padding:9px!important}
+ .visual-cover-copy{margin-top:10px!important;padding:11px 12px!important}
+ .visual-cover-copy>b{font-size:15px!important;line-height:1.25!important}
+ .visual-merch-part{min-height:330px!important;margin-top:0!important;order:2}
+ .visual-merch-object{min-height:190px!important;margin:12px 0!important}
+ .visual-merch-part>p{font-size:11px!important}
+
+ /* Anko / community: restore the service-account evidence below QQ. */
+ .community-board{display:flex!important;flex-direction:column!important;gap:12px!important}
+ .community-channel-panel,.community-feedback-panel{display:flex!important;min-height:0!important;flex-direction:column!important;padding:12px!important;border-radius:13px!important;overflow:visible!important}
+ .community-channel-main,.community-feedback-main{display:block!important;margin-top:10px!important}
+ .feedback-proof{display:block!important;width:100%!important;min-height:0!important;margin:0!important;overflow:hidden!important;border-radius:11px!important}
+ .feedback-proof img{display:block!important;width:100%!important;height:auto!important;max-height:none!important;object-fit:contain!important}
+ .community-feedback-main .community-panel-copy{margin-top:10px!important}
+ .community-service-tags{grid-template-columns:1fr 1fr!important}
+
+ /* Anko / delivery: use one natural vertical stream instead of stacked desktop cards. */
+ .delivery-board{display:flex!important;flex-direction:column!important;gap:12px!important}
+ .delivery-bw,.delivery-music{overflow:visible!important;padding:12px!important}
+ .delivery-photo-grid,.delivery-song-grid{display:flex!important;height:auto!important;min-height:0!important;flex-direction:column!important;gap:9px!important}
+ .delivery-photo-grid figure,.delivery-song-grid figure{display:flex!important;min-height:0!important;height:auto!important;flex:none!important}
+ .delivery-photo-grid img,.delivery-song-grid img{display:block!important;width:100%!important;height:auto!important;max-height:none!important;flex:none!important;object-fit:contain!important}
+ .delivery-song-grid .song-poster,.delivery-song-grid .song-wide:last-child{grid-column:auto!important;grid-row:auto!important}
+ .delivery-section-title b{font-size:15px!important}
+ .delivery-copy-block,.delivery-music-copy{padding:11px!important}
+
+ /* Lion / growth: mobile chart labels get dedicated space instead of desktop coordinates. */
+ .lion-panel-title{align-items:flex-start!important;flex-wrap:wrap!important}
+ .lion-panel-title>div{flex:1 1 150px!important}
+ .lion-panel-title>span{margin:7px 0 0 45px!important;font-size:9px!important}
+ .lion-chart{box-sizing:border-box!important;width:100%!important;min-height:255px!important;height:255px!important;flex:none!important;padding:46px 10px 49px 38px!important;overflow:hidden!important}
+ .lion-chart svg{width:100%!important;height:100%!important;overflow:hidden!important}
+ .lion-chart-y{inset:48px auto 50px 9px!important;font-size:8px!important}
+ .lion-chart-x{right:8px!important;bottom:8px!important;left:38px!important;gap:2px!important;font-size:6px!important;line-height:1.15!important}
+ .lion-chart-x span{min-width:0!important;font-size:7px!important;line-height:1.2!important;word-break:keep-all!important;white-space:normal!important;-webkit-text-size-adjust:100%;text-size-adjust:100%}
+ .lion-chart-x span:nth-child(2),.lion-chart-x span:nth-child(4),.lion-chart-x span:nth-child(5){display:none!important}
+ .lion-chart-x span:nth-child(1){grid-column:1}.lion-chart-x span:nth-child(3){grid-column:3}.lion-chart-x span:nth-child(6){grid-column:6}
+ .lion-chart-stage{top:auto!important;right:12px!important;bottom:47px!important;left:auto!important;gap:5px!important;padding:5px 7px!important}
+ .lion-chart-stage{display:none!important}
+ .lion-chart-stage span{font-size:7px!important}.lion-chart-stage strong{font-size:14px!important}
+ .lion-chart-end{top:8px!important;right:8px!important;padding:6px 8px!important}
+ .lion-chart-end strong{font-size:16px!important}.lion-chart-end small{font-size:7px!important}
+ .lion-growth-results{grid-template-columns:1fr!important}
+
+ /* Lion / knowledge product: reset desktop oversizing and keep every image in its card. */
+ .lion-product-flow{gap:6px!important;padding:9px!important}
+ .lion-product-flow span{font-size:8px!important}
+ .lion-product-board>section{overflow:visible!important;padding:12px!important}
+ .lion-product-gallery{display:flex!important;min-height:0!important;height:auto!important;flex-direction:column!important;gap:10px!important}
+ .lion-product-gallery figure,.lion-product-content-shot,.lion-product-theme-shot{box-sizing:border-box!important;width:100%!important;height:auto!important;min-height:0!important;aspect-ratio:auto!important;align-self:stretch!important;margin:0!important;transform:none!important;overflow:hidden!important}
+ .lion-product-gallery figure img{display:block!important;width:100%!important;height:auto!important;max-height:none!important;object-fit:contain!important}
+ .lion-product-benefits{padding:12px!important}
+ .lion-product-benefits>div{grid-template-columns:1fr 1fr!important;gap:7px!important}
+ .lion-product-benefits span{padding:9px!important;font-size:10px!important;line-height:1.45!important;word-break:normal!important}
+ .lion-product-benefits strong{font-size:12px!important;line-height:1.2!important}
+
+ /* Rabbit: readable metrics, natural media sizing and uninterrupted page scrolling. */
+ .rabbit-impact-metrics{grid-template-columns:1fr 1fr!important;gap:8px!important}
+ .rabbit-impact-metrics>strong{box-sizing:border-box!important;min-width:0!important;min-height:96px!important;padding:12px 10px!important;overflow:hidden!important}
+ .rabbit-impact-metrics em{font-size:22px!important;line-height:1.08!important;word-break:keep-all!important;overflow-wrap:normal!important}
+ .rabbit-impact-metrics .is-breakout em{font-size:15px!important;line-height:1.35!important;white-space:normal!important}
+ .rabbit-impact-metrics small{font-size:9px!important;line-height:1.25!important}
+ .rabbit-impact-board,.rabbit-building-board,.rabbit-engine-board,.rabbit-growth-board{overflow:visible!important}
+ .rabbit-impact-board>section,.rabbit-building-board>section,.rabbit-engine-board>section,.rabbit-engine-board>aside,.rabbit-growth-board>section{box-sizing:border-box!important;width:100%!important;min-height:0!important;overflow:visible!important;padding:12px!important}
+ .rabbit-hit-grid,.rabbit-case-grid{grid-template-columns:1fr!important;gap:9px!important}
+ .rabbit-hit-grid figure,.rabbit-case-grid figure,.rabbit-character-panel>figure,.rabbit-expression-panel>figure,.rabbit-engine-map>figure{height:auto!important;min-height:0!important;overflow:hidden!important}
+ .rabbit-hit-grid img,.rabbit-case-grid img,.rabbit-character-panel img,.rabbit-expression-panel img,.rabbit-engine-map img{display:block!important;width:100%!important;height:auto!important;max-height:none!important;object-fit:contain!important}
+ .rabbit-panel-title,.rabbit-engine-title{align-items:flex-start!important;flex-wrap:wrap!important}
+ .rabbit-panel-title>div,.rabbit-engine-title>div{flex:1 1 150px!important}
+ .rabbit-production-flow,.rabbit-growth-summary-flow{flex-wrap:wrap!important}
+}
