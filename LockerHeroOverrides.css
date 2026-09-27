@@ -945,3 +945,48 @@
  .rabbit-panel-title>div,.rabbit-engine-title>div{flex:1 1 150px!important}
  .rabbit-production-flow,.rabbit-growth-summary-flow{flex-wrap:wrap!important}
 }
+
+/* Phone corrections: preserve desktop composition, fix mobile-only overflow and scale. */
+@media(max-width:720px){
+ .role-sticker-prev,.role-sticker-next{width:96px;grid-template-columns:minmax(0,1fr) auto;padding:7px 8px}
+ .role-sticker-prev b,.role-sticker-next b{max-width:none;overflow:visible;font-size:10px;text-overflow:clip;white-space:nowrap}
+
+ .visual-merch-part{min-height:250px!important}
+ .visual-merch-object{min-height:125px!important;margin:8px 0!important}
+ .visual-vinyl{top:2px!important;right:14%!important;width:126px!important;height:126px!important}
+ .visual-sleeve{right:auto!important;bottom:1px!important;left:48%!important;width:116px!important;height:116px!important;transform:translateX(-58%)!important}
+ .visual-sleeve>b{font-size:20px!important}
+ .visual-sleeve>small{font-size:7px!important}
+
+ .merch-archive.uses-existing-gallery{box-sizing:border-box;width:100%;height:100%;gap:10px;padding:12px;border-radius:16px}
+ .merch-archive.uses-existing-gallery>header{gap:8px}
+ .merch-archive.uses-existing-gallery>header b{font-size:18px}
+ .merch-archive.uses-existing-gallery>header span{font-size:8px}
+ .merch-archive.uses-existing-gallery>header button{padding:8px 10px;font-size:9px}
+ .merch-existing-gallery{overflow:hidden;border-radius:14px}
+ .merch-existing-gallery .anko-gallery{min-height:0;border-radius:14px}
+ .merch-existing-gallery .anko-depth{min-height:0;mask-image:none}
+ .merch-existing-gallery .anko-depth-card,
+ .merch-existing-gallery .anko-depth-card[data-compact=true]{left:50%;width:78%;height:82%;transform:translate(-50%,-50%) translateX(calc(var(--depth)*30px)) translateZ(calc(var(--depth)*-90px))}
+ .merch-existing-gallery .anko-controls{display:grid;grid-template-columns:minmax(0,1fr) auto;padding:10px;font-size:9px}
+ .merch-existing-gallery .anko-controls>span{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+
+ .delivery-photo-main img{transform:rotate(180deg)}
+
+ .rabbit-engine-notes{display:flex!important;width:100%!important;flex-direction:column!important;gap:9px!important}
+ .rabbit-engine-intro,.rabbit-engine-tags{grid-column:auto!important}
+ .rabbit-engine-highlight{box-sizing:border-box!important;width:100%!important;grid-template-columns:34px minmax(0,1fr)!important;gap:9px!important}
+ .rabbit-engine-highlight>div{min-width:0}
+ .rabbit-engine-highlight>div>b{font-size:15px!important;line-height:1.25!important}
+ .rabbit-engine-highlight>div>p{font-size:11px!important;line-height:1.55!important;overflow-wrap:anywhere}
+
+ .rabbit-growth-method,.rabbit-growth-cases{box-sizing:border-box!important;width:100%!important;min-width:0!important;overflow:hidden!important}
+ .rabbit-case-grid{display:flex!important;width:100%!important;min-width:0!important;flex-direction:column!important}
+ .rabbit-case-grid article,.rabbit-case-grid article>div{box-sizing:border-box!important;width:100%!important;min-width:0!important}
+ .rabbit-case-grid header{grid-template-columns:minmax(0,1fr) auto!important}
+ .rabbit-case-grid p,.rabbit-case-grid small{overflow-wrap:anywhere}
+ .rabbit-case-conclusion{display:flex!important;width:100%!important;box-sizing:border-box!important;flex-direction:column!important;align-items:flex-start!important;gap:7px!important;padding:12px!important}
+ .rabbit-case-conclusion>b{font-size:15px!important;line-height:1.35!important;white-space:normal!important}
+ .rabbit-case-conclusion>p{width:100%!important;font-size:11px!important;line-height:1.55!important;overflow-wrap:anywhere}
+ .rabbit-growth-method>blockquote{min-height:0!important;font-size:15px!important;line-height:1.5!important}
+}
