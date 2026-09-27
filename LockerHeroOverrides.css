@@ -1003,3 +1003,11 @@
  .rabbit-case-conclusion>p{width:100%!important;font-size:11px!important;line-height:1.55!important;overflow-wrap:anywhere}
  .rabbit-growth-method>blockquote{min-height:0!important;font-size:15px!important;line-height:1.5!important}
 }
+
+@media(max-width:720px){
+ .merch-archive.uses-existing-gallery>header>div{min-width:0;flex:1}
+ .merch-archive.uses-existing-gallery>header>div>small,
+ .merch-archive.uses-existing-gallery>header>div>span{display:none!important}
+ .merch-archive.uses-existing-gallery>header>div>b{font-size:18px!important;line-height:1!important;white-space:nowrap!important;word-break:keep-all!important}
+ .merch-archive.uses-existing-gallery>header>button{flex:0 0 auto;white-space:nowrap}
+}
